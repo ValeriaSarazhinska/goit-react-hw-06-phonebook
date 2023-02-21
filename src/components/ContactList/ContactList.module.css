@@ -20,7 +20,7 @@
   border-radius:5px ;
   border: none;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .button:hover{
   background-color: red;
