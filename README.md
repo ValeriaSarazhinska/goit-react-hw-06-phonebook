@@ -1,1 +1,1 @@
-https://valeriasarazhinska.github.io/goit-react-hw-04-phonebook/
+https://valeriasarazhinska.github.io/goit-react-hw-06-phonebook/
