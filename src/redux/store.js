@@ -8,22 +8,21 @@ import {
   PAUSE,
   PERSIST,
   PURGE,
+  REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { REGISTER } from 'redux-persist/es/constants';
 
+const persistContactsConfig = {
+  key: 'contacts',
+  storage,
+  whiteList: ['contacts'],
+};
 const rootReducer = combineReducers({
-  contacts: contactReducer,
+  contacts: persistReducer(persistContactsConfig, contactReducer),
 });
 
-const persistConfig = {
-  key: 'root',
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: rootReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
